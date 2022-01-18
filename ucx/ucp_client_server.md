@@ -66,3 +66,16 @@ run_server
 --//end of while(1)
 ```
 
+#3.run_client
+
+```cpp
+run_client
+--start_client
+----set_sock_addr(address_str, &connect_addr);
+----ep_params.sockaddr.addr    = (struct sockaddr*)&connect_addr;
+----ucp_ep_create
+--client_server_do_work
+----client_server_communication
+--ep_close
+
+```
