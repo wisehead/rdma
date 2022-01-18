@@ -51,5 +51,18 @@ run_server
 ------------for (elem = cbq->fast_elems; (cb = elem->cb) != NULL; ++elem)
 --------------count += cb(elem->arg);
 --------ucs_async_check_miss(&worker->async);
+----server_create_ep
+----client_server_do_work
+------for (i = 0; i < num_iterations; i++)
+--------client_server_communication
+----------case CLIENT_SERVER_SEND_RECV_STREAM:
+------------send_recv_stream
+----------case CLIENT_SERVER_SEND_RECV_TAG:
+------------send_recv_tag
+----------case CLIENT_SERVER_SEND_RECV_AM:
+------------send_recv_am
+----ep_close
+----context.conn_request = NULL;
+--//end of while(1)
 ```
 
